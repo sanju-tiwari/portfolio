@@ -1,0 +1,44 @@
+.roboto{
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings:"wdth" 100;
+  }
+  .kanit-extrabold{
+    font-family: "Kanit", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+  }  
+  .courgette-regular {
+    font-family: "Courgette", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }  
+
+  .bitronor {
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+#slider::-webkit-scrollbar {
+  display: none;
+}
+#slider1::-webkit-scrollbar {
+  display: none;
+}
+.lexend {
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  
+}
+.exo-2 {
+  font-family: "Exo 2", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 6000;
+  font-style: normal;
+}
