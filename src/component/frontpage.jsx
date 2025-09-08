@@ -12,6 +12,8 @@ import { Link as ScrollLink } from "react-scroll";
 import { Link as RouterLink } from "react-router-dom";
 import CurvedLoop from "@/components/CurvedLoop";
 import Header from "./header";
+  import hover1 from "../assets/hover.jpg"
+  import hover2 from "../assets/hover2.jpg"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -34,7 +36,6 @@ function Frontpage(){
   const containerRef = useRef(null);
   const topImgRef = useRef(null);
   const custom = useRef(null)
-
 
   function Model() {
   const { scene } = useGLTF("/model/luffy_hat.glb"); 
@@ -152,13 +153,13 @@ function Frontpage(){
     >
 
       <img
-        src="/assets/hover2.jpg"
+        src={hover2}
         alt="back"
         className="absolute opacity-50 inset-0 w-full h-full object-cover"
       />
       <img
         ref={topImgRef}
-        src="/assets/hover.jpg"
+        src={hover1}
         alt="front"
         style={{clipPath:"circle(0px at 0px 0px)"}}
         className="absolute inset-0 w-full h-full object-cover"

@@ -3,8 +3,13 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import React from "react";
 import { useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Header from "./header";
+import scr from "../assets/img/sc1.png"
+import scr2 from "../assets/img/sc2.png"
+import scr3 from "../assets/img/sc3.png"
+import scr4 from "../assets/img/sc4.png"
+import scr5 from "../assets/img/sc5.png"
 
 function Project() {
   const cursor = useRef(null);
@@ -13,6 +18,7 @@ function Project() {
   const third = useRef(null);
   const fourth = useRef(null);
   const five = useRef(null);
+  const navigate = useNavigate()
   gsap.registerPlugin(ScrollTrigger)
 
   useGSAP(()=>{
@@ -80,6 +86,22 @@ function Project() {
       window.removeEventListener("mousemove", mouse);
     };
   }, []);
+   
+  const handleclick1 = ()=>{
+    window.location.href = ("https://spontaneous-pastelito-d076fd.netlify.app/")
+  }
+    const handleclick2 = ()=>{
+    window.location.href = ("https://spontaneous-pastelito-d076fd.netlify.app/")
+  }
+    const handleclick3 = ()=>{
+    window.location.href = ("https://spontaneous-pastelito-d076fd.netlify.app/")
+  }
+    const handleclick4 = ()=>{
+    window.location.href = ("https://spontaneous-pastelito-d076fd.netlify.app/")
+  }
+    const handleclick5 = ()=>{
+    window.location.href = ("https://spontaneous-pastelito-d076fd.netlify.app/")
+  }
 
   return (
     <div className=" h-auto w-screen overflow-hidden ">
@@ -89,7 +111,7 @@ function Project() {
         className=" z-88 h-5 w-5 bg-white rounded-full fixed flex items-center justify-center uppercase exo-2 "
       ></div>
       <div className=" h-full w-full flex flex-col items-center">
-        <div ref={first} className=" h-screen md:h-auto xl:h-screen w-screen relative overflow-hidden p-5 flex flex-col ">
+        <div onClick={handleclick1} ref={first} className=" h-screen md:h-auto xl:h-screen w-screen relative overflow-hidden p-5 flex flex-col ">
           <div className=" h-full w-full border-2 border-white rounded-4xl overflow-hidden ">
             <div className=" w-full flex items-center justify-between h-30 p-5 ">
               <h1 className=" text-white roboto text-6xl md:text-9xl  ">01</h1>
@@ -100,7 +122,7 @@ function Project() {
             <div className=" h-full relative overflow-hidden w-full ">
               <img
                 className=" w-full  object-cover md:object-contain md:relative absolute  top-50 md:top-0 "
-                src="/assets/img/Screenshot 2025-09-04 125105.png"
+                src={scr}
                 alt=""
               />
               <div className="  w-full  z-99  flex items-center justify-center xl:justify-between  ">
@@ -142,7 +164,7 @@ function Project() {
             <div className=" h-full relative overflow-hidden w-full ">
               <img
                 className=" w-full h-[30rem]  object-contain top-0 "
-                src="/assets/img/Screenshot 2025-09-04 152954.png"
+                src={scr2}
                 alt=""
               />
               <div className="  w-full  z-99  flex items-center justify-center xl:justify-between ">
@@ -181,7 +203,7 @@ function Project() {
             <div className=" h-full relative overflow-hidden w-full ">
               <img
                 className=" w-full h-[30rem]  object-contain top-0 "
-                src="/assets/img/Screenshot 2025-09-04 155028.png"
+                src={scr3}
                 alt=""
               />
               <div className="  w-full  z-99  flex items-center justify-center xl:justify-between  ">
@@ -220,7 +242,7 @@ function Project() {
             <div className=" h-full relative overflow-hidden w-full ">
               <img
                 className=" w-full h-[30rem] object-contain opacity-60 top-0 "
-                src="/assets/img/Screenshot 2025-09-04 153834.png"
+                src={scr4}
                 alt=""
               />
               <div className="  w-full  z-99  flex items-center justify-center xl:justify-between ">
@@ -258,7 +280,7 @@ function Project() {
             <div className=" h-full relative overflow-hidden w-full ">
               <img
                 className=" w-full h-[30rem] object-contain top-0 "
-                src="/assets/img/Screenshot 2025-09-04 154356.png"
+                src={scr5}
                 alt=""
               />
               <div className="  w-full  z-99  flex items-center justify-center xl:justify-between ">

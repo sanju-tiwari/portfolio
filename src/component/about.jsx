@@ -103,7 +103,7 @@ const About = () => {
       </div>
       <div ref={para} className="flex flex-col items-center justify-center md:flex xl:justify-around md:mt-[-2rem] lg:flex-row md:items-center md:justify-center lg:flex md:gap-[2rem] lg:items-center lg:justify-start " >
         <p   className="rbitron text:[0.6rem] z-10 lg:text-gray-300 md:text-gray-300 md:w-[35rem] lg:w-[40rem] md:text-[1.2rem] text-center font-bold">
-        "Hey there! I'm Sanju, a 21-year-old computer science student from India with a passion for crafting dynamic and responsive web experiences. I'm diving deep into the world of modern web development, exploring the magic of ReactJS and the power of NextJS to build sleek, high-performance applications. I'm also mastering GSAP for stunning animations and Tailwind CSS for fast, beautiful designs. Let’s create something amazing together!"
+        "Hey there! I'm Sanju, a 22-year-old computer science student from India with a passion for crafting dynamic and responsive web experiences. I'm diving deep into the world of modern web development, exploring the magic of ReactJS and the power of NextJS to build sleek, high-performance applications. I'm also mastering GSAP for stunning animations and Tailwind CSS for fast, beautiful designs. Let’s create something amazing together!"
         </p>
       </div>
       <div ref={button} className="flex mt-[3rem] justify-center   h-[3rem] w-[17rem] ">
