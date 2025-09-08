@@ -65,9 +65,6 @@ function Frontpage(){
         duration: 0.3,
         ease: "power2.out",
       });
-  
-    
-
      }
 
  window.addEventListener("mousemove" , mousemove)
@@ -155,13 +152,13 @@ function Frontpage(){
     >
 
       <img
-        src="src\assets\hover2.jpg"
+        src="/assets/hover2.jpg"
         alt="back"
         className="absolute opacity-50 inset-0 w-full h-full object-cover"
       />
       <img
         ref={topImgRef}
-        src="src\assets\hover.jpg"
+        src="/assets/hover.jpg"
         alt="front"
         style={{clipPath:"circle(0px at 0px 0px)"}}
         className="absolute inset-0 w-full h-full object-cover"
@@ -182,7 +179,6 @@ function Frontpage(){
       <ambientLight intensity={0.5} />
       <directionalLight position={[3, 3, 3]} />
       <Model />
-      {/* <OrbitControls /> */}
     </Canvas>
           </div>  
           </div> 

@@ -100,7 +100,7 @@ function Project() {
             <div className=" h-full relative overflow-hidden w-full ">
               <img
                 className=" w-full  object-cover md:object-contain md:relative absolute  top-50 md:top-0 "
-                src="src\assets\img\Screenshot 2025-09-04 125105.png"
+                src="/assets/img/Screenshot 2025-09-04 125105.png"
                 alt=""
               />
               <div className="  w-full  z-99  flex items-center justify-center xl:justify-between  ">
@@ -142,7 +142,7 @@ function Project() {
             <div className=" h-full relative overflow-hidden w-full ">
               <img
                 className=" w-full h-[30rem]  object-contain top-0 "
-                src="src\assets\img\Screenshot 2025-09-04 152954.png"
+                src="/assets/img/Screenshot 2025-09-04 152954.png"
                 alt=""
               />
               <div className="  w-full  z-99  flex items-center justify-center xl:justify-between ">
@@ -181,7 +181,7 @@ function Project() {
             <div className=" h-full relative overflow-hidden w-full ">
               <img
                 className=" w-full h-[30rem]  object-contain top-0 "
-                src="src\assets\img\Screenshot 2025-09-04 155028.png"
+                src="/assets/img/Screenshot 2025-09-04 155028.png"
                 alt=""
               />
               <div className="  w-full  z-99  flex items-center justify-center xl:justify-between  ">
@@ -220,7 +220,7 @@ function Project() {
             <div className=" h-full relative overflow-hidden w-full ">
               <img
                 className=" w-full h-[30rem] object-contain opacity-60 top-0 "
-                src="src\assets\img\Screenshot 2025-09-04 153834.png"
+                src="/assets/img/Screenshot 2025-09-04 153834.png"
                 alt=""
               />
               <div className="  w-full  z-99  flex items-center justify-center xl:justify-between ">
@@ -258,7 +258,7 @@ function Project() {
             <div className=" h-full relative overflow-hidden w-full ">
               <img
                 className=" w-full h-[30rem] object-contain top-0 "
-                src="src\assets\img\Screenshot 2025-09-04 154356.png"
+                src="/assets/img/Screenshot 2025-09-04 154356.png"
                 alt=""
               />
               <div className="  w-full  z-99  flex items-center justify-center xl:justify-between ">
