@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script>
+  if (!customElements.get('model-viewer')) {
+    // Only load if not already defined
+    const script = document.createElement('script');
+    script.type = 'module';
+    script.src = 'https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js';
+    document.head.appendChild(script);
+  }
+</script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

@@ -1,9 +1,17 @@
 import { useGSAP } from "@gsap/react"
-import { Link } from 'react-scroll';
-import {useRef} from "react"
+import {useEffect, useRef, useState} from "react"
 import ScrollTrigger from "gsap/ScrollTrigger"
 import gsap from "gsap";
-
+import { Canvas, useFrame } from "@react-three/fiber";
+import { OrbitControls, useGLTF } from "@react-three/drei";
+import Secondpage from "./secondpage";
+import About from "./about";
+import Idea from "./Project";
+import ContactMail from "./Contact";
+import { Link as ScrollLink } from "react-scroll";
+import { Link as RouterLink } from "react-router-dom";
+import CurvedLoop from "@/components/CurvedLoop";
+import Header from "./header";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,7 +31,53 @@ function Frontpage(){
   const tail = useRef(null)
   const Gsap = useRef(null)
   const git = useRef(null)
+  const containerRef = useRef(null);
+  const topImgRef = useRef(null);
+  const custom = useRef(null)
 
+
+  function Model() {
+  const { scene } = useGLTF("/model/luffy_hat.glb"); 
+  const modelRef = useRef();
+
+
+  useFrame(() => {
+    if (modelRef.current) {
+      modelRef.current.rotation.y += 0.01; 
+    }
+  });
+
+  return <primitive ref={modelRef} object={scene} scale={[3,3,3]} />;
+}
+   useGSAP(()=>{
+     const mousemove = (e)=>{
+          const cursorSize = 250;
+       gsap.to(custom.current , {
+        x:e.clientX - cursorSize / 2 ,
+        y:e.clientY - cursorSize / 2 ,
+        duration:0.3,
+        ease:"power1",
+    
+       })         
+     
+        gsap.to(topImgRef.current, {
+        clipPath: `circle(${cursorSize / 2}px at ${e.clientX}px ${e.clientY}px)`,
+        duration: 0.3,
+        ease: "power2.out",
+      });
+  
+    
+
+     }
+
+ window.addEventListener("mousemove" , mousemove)
+
+ return ()=>{
+  window.removeEventListener("mousemove" , mousemove)
+ }
+
+   })
+    
   useGSAP(() => {
     const text = textRef.current;
     const characters = text.innerText.split("");
@@ -85,49 +139,75 @@ function Frontpage(){
   
 
   })
+    const items = [
+    { text: "HOME", to: "home", type: "scroll" },
+    { text: "PROJECT", to: "/projects", type: "route" },
+    { text: "CONTACT", to: "/contact", type: "route" },
+  ];
+
  
     return (
-      <div className="text-white h-auto w-screen p-[2rem]">
-      <div className="text-center roboto md:p-4">
-  <ul className="flex items-center text-gray-300 justify-around">
-    {[
-      { text: "HOME", to: "home" },
-      { text: "ABOUT", to: "about" },
-      { text: "PROJECTS", to: "projects" },
-      { text: "CONTACT", to: "contact" },
-    ].map((item, index) => (
-      <li key={index} className="text-[1rem]">
-        <Link
-          to={item.to}
-          spy={true}
-          smooth={true}
-          duration={500}
-          offset={-70}
-          className="hover:text-red-400 cursor-pointer transition-all duration-300 ease-in-out"
-        >
-          {item.text}
-        </Link>
-      </li>
-    ))}
-  </ul>
-</div>
-    
-   
-        <div className="kanit-extrabold flex items-center justify-center overflow-hidden md:h-[10rem] lg:h-[15rem]">
+      <div className="text-white h-auto w-screen relative ">
+        <div ref={custom} className=" group fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none z-50 boder-2 border-white drop-shadow-[10px_10px_20px_gold] " ></div>
+     <div
+      ref={containerRef}
+      className="absolute z-0 w-full h-screen overflow-hidden"
+    >
+
+      <img
+        src="src\assets\hover2.jpg"
+        alt="back"
+        className="absolute opacity-50 inset-0 w-full h-full object-cover"
+      />
+      <img
+        ref={topImgRef}
+        src="src\assets\hover.jpg"
+        alt="front"
+        style={{clipPath:"circle(0px at 0px 0px)"}}
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+    </div>
+  <div className="relative text-center roboto ">
+       <Header/>
+    </div>
+        <div className="kanit-extrabold relative flex items-center justify-center overflow-hidden md:h-[10rem] lg:h-[15rem] ">
           <h1 ref={textRef} 
-          className=" w-[100%] flex items-center justify-center lg:mt-[-1rem]  text-[3rem] md:text-[8rem] lg:text-[12rem] xl:text-[14rem] "
+          className=" w-[100%] flex items-center justify-center lg:mt-[-1rem]  text-[3rem] md:text-[8rem] lg:text-[10rem] xl:text-[14rem] "
            >HI,I'M<span className="text-red-400  " >SANJU</span>   
           </h1>
-        </div>        
-        <div className="flex flex-col items-center lg:mt-[-2rem] justify-center md:flex md:items-center md:justify-center xl:justify-around md:gap-[2rem] lg:flex-row lg:items-start  lg:justify-between lg:pointer-events-none  ">
-          <div>
-          <p ref={para} className="rbitron text:[1rem] md:w-[35rem] lg:mt-[2rem] lg:w-[30rem] md:text-[1.2rem]
-           lg:text-[1.2rem] text-center font-light" >
-          "A passionate front-end web developer with a love for crafting dynamic, responsive, and visually stunning websites. I specialize in modern technologies like React, GSAP, bringing creative ideas to life with smooth animations and interactive designs. My goal is to build seamless, user-friendly experiences that leave a lasting impression. I'm constantly learning, exploring new tools, and pushing the limits of what’s possible on the web. Let’s collaborate and turn ideas into reality!😍"
-          </p> 
-          </div>      
-   
-        </div>
-      </div>                                                                      
+        </div>     
+        <div className=" w-full flex items-center justify-center " >
+             <div className=" w-100 h-[20rem] " >
+              <Canvas camera={{ position: [0, 0, 5] }}>
+      <ambientLight intensity={0.5} />
+      <directionalLight position={[3, 3, 3]} />
+      <Model />
+      {/* <OrbitControls /> */}
+    </Canvas>
+          </div>  
+          </div> 
+         <div className=" w-full relative mt-5  ">
+            <div className=" w-full bg-white h-[1px] "></div>
+            <div className=" flex w-full items-center mt-10 justify-between " >
+            <h1 className=" bitronor text-2xl ml-5  hidden md:flex  "> Art director </h1>  
+              <p className=" roboto md:w-2/5 text-center md:hidden lg:flex ">I design and develop websites that do more than look good—they tell stories, evoke emotions, and make brands feel alive.</p>
+               <h1 className="bitronor uppercase text-2xl mr-5 hidden md:flex ">
+                Web dEVELOPER
+               </h1>
+            </div>
+          </div> 
+         <Secondpage/> 
+          <About/> 
+          <Idea/>
+
+<CurvedLoop 
+  marqueeText="SEND ✦ AN ✦ EMAIL ✦"
+  speed={3}
+  curveAmount={145}
+  direction="right"
+  interactive={true}
+  className="custom-text-style"
+/>
+</div>                                                                      
     )}
 export default Frontpage
