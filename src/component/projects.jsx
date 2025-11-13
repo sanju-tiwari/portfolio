@@ -10,6 +10,7 @@ import scr2 from "../assets/img/sc2.png"
 import scr3 from "../assets/img/sc3.png"
 import scr4 from "../assets/img/sc4.png"
 import scr5 from "../assets/img/sc5.png"
+import scr6 from "../assets/img/sc6.png"
 
 function Project() {
   const cursor = useRef(null);
@@ -18,6 +19,7 @@ function Project() {
   const third = useRef(null);
   const fourth = useRef(null);
   const five = useRef(null);
+  const six = useRef(null);
   const navigate = useNavigate()
   gsap.registerPlugin(ScrollTrigger)
 
@@ -68,6 +70,15 @@ function Project() {
       },
       opacity:0 ,
       delay:3
+    }).to(six.current ,{
+            scrollTrigger:{
+        trigger:six.current,
+        pin:true,
+        pinType:"transform",
+        scrub:true,
+      },
+      opacity:0 ,
+      delay:3
     })
   })
 
@@ -87,21 +98,25 @@ function Project() {
     };
   }, []);
    
-  const handleclick1 = ()=>{
+    const handleclick1 = ()=>{
     window.location.href = ("https://spontaneous-pastelito-d076fd.netlify.app/")
   }
     const handleclick2 = ()=>{
-    window.location.href = ("https://spontaneous-pastelito-d076fd.netlify.app/")
+    window.location.href = ("https://monumental-stardust-84dc84.netlify.app/")
   }
     const handleclick3 = ()=>{
     window.location.href = ("https://spontaneous-pastelito-d076fd.netlify.app/")
   }
     const handleclick4 = ()=>{
-    window.location.href = ("https://spontaneous-pastelito-d076fd.netlify.app/")
+    window.location.href = ("https://k72-liart.vercel.app/")
   }
     const handleclick5 = ()=>{
-    window.location.href = ("https://spontaneous-pastelito-d076fd.netlify.app/")
+    window.location.href = ("https://creator-swart.vercel.app/")
   }
+     const handleclick6 = ()=>{
+    window.location.href = ("https://medidoc-bice.vercel.app/")
+  }
+
 
   return (
     <div className=" h-auto w-screen overflow-hidden ">
@@ -111,7 +126,7 @@ function Project() {
         className=" z-88 h-5 w-5 bg-white rounded-full fixed flex items-center justify-center uppercase exo-2 "
       ></div>
       <div className=" h-full w-full flex flex-col items-center">
-        <div onClick={handleclick1} ref={first} className=" h-screen md:h-auto xl:h-screen w-screen relative overflow-hidden p-5 flex flex-col ">
+        <div onClick={handleclick1} ref={first} className=" h-screen md:h-auto xl:h-screen w-screen relative overflow-hidden p-2 flex flex-col ">
           <div className=" h-full w-full border-2 border-white rounded-4xl overflow-hidden ">
             <div className=" w-full flex items-center justify-between h-30 p-5 ">
               <h1 className=" text-white roboto text-6xl md:text-9xl  ">01</h1>
@@ -142,7 +157,7 @@ function Project() {
                     anytime, anywhere – all in one place.”
                   </p>
                 </div>
-                <h2 className=" text-white text-3xl exo-2 mr-5 hidden xl:flex  ">01/05</h2>
+                <h2 className=" text-white text-3xl exo-2 mr-5 hidden xl:flex  ">01/06</h2>
               </div>
             </div>
             <div className=" absolute w-full  md:hidden flex flex-col items-center justify-center  bottom-10  "  >
@@ -153,7 +168,7 @@ function Project() {
             </div>
           </div>
         </div>
-        <div ref={second} className=" h-auto xl:h-screen w-screen relative overflow-hidden p-5 flex flex-col ">
+        <div onClick={handleclick2} ref={second} className=" h-screen md:h-auto xl:h-screen w-screen relative overflow-hidden p-2 flex flex-col  ">
           <div className=" h-full w-full border-2 border-white rounded-4xl overflow-hidden ">
             <div className=" w-full flex items-center justify-between h-30 p-5 ">
               <h1 className=" text-white roboto text-6xl md:text-9xl  ">02</h1>
@@ -184,7 +199,7 @@ function Project() {
                     checkout, and fast delivery anytime, anywhere.”
                   </p>
                 </div>
-                <h2 className=" text-white text-3xl exo-2 mr-5 xl:flex hidden ">02/05</h2>
+                <h2 className=" text-white text-3xl exo-2 mr-5 xl:flex hidden ">02/06</h2>
               </div>
               <div className=" flex md:hidden mb-5 " >
                          <button className=" text-white w-full text-2xl  " >Live Project</button>
@@ -192,7 +207,7 @@ function Project() {
             </div>
           </div>
         </div>
-        <div  ref={third} className=" h-auto xl:h-screen w-screen relative overflow-hidden p-5 flex flex-col ">
+        <div  onClick={handleclick3} ref={third} className="h-screen md:h-auto xl:h-screen w-screen relative overflow-hidden p-2 flex flex-col ">
           <div className=" h-full w-full border-2 border-white rounded-4xl overflow-hidden ">
             <div className=" w-full flex items-center justify-between h-30 p-5 ">
               <h1 className=" text-white roboto text-6xl md:text-9xl  ">03</h1>
@@ -223,15 +238,15 @@ function Project() {
                     and reliable drivers at your service.”
                   </p>
                 </div>
-                <h2 className=" text-white text-3xl exo-2 mr-5 hidden xl:flex ">03/05</h2>
+                <h2 className=" text-white text-3xl exo-2 mr-5 hidden xl:flex ">03/06</h2>
               </div>
                   <div className=" flex md:hidden mb-5 " >
-                         <button className=" text-white w-full text-2xl  " >Live Project</button>
+                         <button onClick={handleclick3} className=" text-white w-full text-2xl  " >Live Project</button>
               </div>
             </div>
           </div>
         </div>
-        <div  ref={fourth} className=" h-auto xl:h-screen w-screen relative overflow-hidden p-5  flex flex-col  ">
+        <div onClick={handleclick4} ref={fourth} className="h-screen md:h-auto xl:h-screen w-screen relative overflow-hidden p-2 flex flex-col ">
           <div className=" h-full w-full border-2 border-white rounded-4xl overflow-hidden ">
             <div className=" w-full flex items-center justify-between h-30 p-5 ">
               <h1 className=" text-white roboto text-6xl md:text-9xl  ">04</h1>
@@ -261,15 +276,15 @@ function Project() {
                     your brand’s future”
                   </p>
                 </div>
-                <h2 className=" text-white text-3xl exo-2 mr-5  xl:flex hidden ">04/05</h2>
+                <h2 className=" text-white text-3xl exo-2 mr-5  xl:flex hidden ">04/06</h2>
               </div>
                   <div className=" flex md:hidden mb-5 " >
-                         <button className=" text-white w-full text-2xl  " >Live Project</button>
+                         <button onClick={handleclick4} className=" text-white w-full text-2xl  " >Live Project</button>
               </div>
             </div>
           </div>
         </div>
-        <div  ref={five} className=" h-auto xl:h-screen w-screen relative overflow-hidden p-5  flex flex-col  ">
+        <div onClick={handleclick5}  ref={five} className="  h-screen md:h-auto xl:h-screen w-screen relative overflow-hidden p-2 flex flex-col ">
           <div className=" h-full w-full border-2 border-white rounded-4xl overflow-hidden ">
             <div className=" w-full flex items-center justify-between h-30 p-5 ">
               <h1 className=" text-white roboto text-6xl md:text-9xl  ">05</h1>
@@ -301,10 +316,48 @@ function Project() {
                     alike”
                   </p>
                 </div>
-                <h2 className=" text-white text-3xl exo-2 mr-5 xl:flex hidden ">05/05</h2>
+                <h2 className=" text-white text-3xl exo-2 mr-5 xl:flex hidden ">05/06</h2>
               </div>
                    <div className=" flex md:hidden mb-5 " >
-                         <button className=" text-white w-full text-2xl  " >Live Project</button>
+                         <button onClick={handleclick5} className=" text-white w-full text-2xl  " >Live Project</button>
+              </div>
+            </div>
+           
+          </div>
+        </div>
+        <div onClick={handleclick6}  ref={six} className="  h-screen md:h-auto xl:h-screen w-screen relative overflow-hidden p-2 flex flex-col ">
+          <div className=" h-full w-full border-2 border-white rounded-4xl overflow-hidden ">
+            <div className=" w-full flex items-center justify-between h-30 p-5 ">
+              <h1 className=" text-white roboto text-6xl md:text-9xl  ">06</h1>
+              <button className=" md:flex items-center justify-center hidden border-[1px] border-white h-15 w-70 rounded-4xl hover:border-red-500 duration-150 ease-in-out  exo-2 uppercase text-white ">
+                Live Projects{" "}
+              </button>
+            </div>
+            <div className=" h-full relative overflow-hidden w-full ">
+              <img
+                className=" w-full h-[30rem] object-contain top-0 "
+                src={scr6}
+                alt=""
+              />
+              <div className="  w-full  z-99  flex items-center justify-center xl:justify-between ">
+                <div className=" xl:flex hidden  items-start flex-col ml-5  ">
+                  <h1 className=" text-white kanit-extrabold ">Roles : </h1>
+                  <h1 className=" text-white roboto ">Art direction</h1>
+                  <h1 className=" text-white roboto ">Webdesign</h1>
+                  <h1 className=" text-white roboto ">web development</h1>
+                </div>
+                <div className=" flex flex-col items-center ">
+                  <h1 className=" text-6xl bitronor md:mb-0 mb-5  bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent ">
+                    Medidoc
+                  </h1>
+                  <p className=" text-white text-sm text-center courgette-regular xl:flex hidden mt-3 ">
+                  "Book appointments easily, consult trusted doctors online, and manage your health anytime, anywhere with ease."
+                  </p>
+                </div>
+                <h2 className=" text-white text-3xl exo-2 mr-5 xl:flex hidden ">06/06</h2>
+              </div>
+                   <div className=" flex md:hidden mb-5 " >
+                         <button onClick={handleclick6} className=" text-white w-full text-2xl  " >Live Project</button>
               </div>
             </div>
            
